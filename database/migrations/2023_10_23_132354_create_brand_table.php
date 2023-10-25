@@ -9,6 +9,8 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    // Made the migration thourugh the laravel commads, i first made the most basic table which for me was the brand table
+    // i then added in the collumns for the table 
     public function up(): void
     {
         Schema::create('brand', function (Blueprint $table) {
