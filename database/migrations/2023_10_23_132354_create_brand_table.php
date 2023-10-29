@@ -13,7 +13,7 @@ return new class extends Migration
     // i then added in the collumns for the table 
     public function up(): void
     {
-        Schema::create('brand', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
             $table->string('founded');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('brand');
+        Schema::dropIfExists('brands');
     }
 };
