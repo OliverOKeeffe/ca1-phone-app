@@ -77,7 +77,10 @@ class BrandController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        return view('brands.edit', [
+            'brand' => $brand
+        ]);
     }
 
     /**
@@ -85,14 +88,40 @@ class BrandController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
-    }
+        $rules =[
+            'name'=> "required|string|unique:brands,name,{$id}|min:3|max:50",
+            'founded'=> 'required|string|min:5|max:1000',
+            'location'=> 'required|string|min:5|max:1000',
+
+        ];
+
+        $messages=[
+            'name.unique'=>'Brand title should be unique'
+        ];
+
+        $request->validate($rules, $messages);
+
+
+        $brand = Brand::findOrFail($id);
+        $brand->name = $request->name;
+        $brand->founded = $request->founded;
+        $brand->location = $request->location;
+        $brand->save();
+
+        return redirect()       
+            ->route('brands.index')
+            ->with('status', ' Updated a Brand');
+    
+}
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $brand->delete();
+
+        return redirect()->route('brands.index')->with('status', 'Brand deleted successfully');
     }
-}
+
