@@ -13,6 +13,20 @@ class BrandSeeder extends Seeder
      */
     public function run(): void
     {
-        Brand::factory()->count(20)->create(); 
+        // Brand::factory()->count(20)->create(); 
+        $brands = [
+            [
+              'name' => 'Apple',
+              'founded' => '1976',
+              'location' => 'LA, USA',
+            ],
+            [
+                'name' => 'Samsung',
+                'founded' => '1969',
+                'location' => 'Suwon-Si, South Korea',
+            ],
+     
+          ];
+          Brand::insert($brands);
     }
 }
