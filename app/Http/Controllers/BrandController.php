@@ -58,7 +58,6 @@ class BrandController extends Controller
         return redirect()->route('brands.index')->with('status', 'Created a new Brand');
     }
 
-    }
 
     /**
      * Display the specified resource.
@@ -125,3 +124,4 @@ class BrandController extends Controller
         return redirect()->route('brands.index')->with('status', 'Brand deleted successfully');
     }
 
+}
