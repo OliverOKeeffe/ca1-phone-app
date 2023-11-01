@@ -36,7 +36,7 @@ class BrandController extends Controller
 
         //validation rules
         $rules =[
-            'name'=> 'required|string|unique:brands,title|min:2|max:150',
+            'name'=> 'required|string|unique:brands,name|min:2|max:150',
             'founded'=> 'required|string|min:4|max:4',
             'location'=> 'required|string|min:5|max:30',
 

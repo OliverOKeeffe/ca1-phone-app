@@ -13,7 +13,7 @@
     </div>
 @endif --}}
 
-<form action="{{ route('brand.store') }}" method="post">
+<form action="{{ route('brands.store') }}" method="post">
     @csrf
     <div>
         <label for="">Name</label>
