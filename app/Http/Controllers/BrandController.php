@@ -89,7 +89,7 @@ class BrandController extends Controller
     {
         $rules =[
             'name'=> "required|string|unique:brands,name,{$id}|min:3|max:50",
-            'founded'=> 'required|string|min:5|max:1000',
+            'founded'=> 'required|string|min:4|max:4',
             'location'=> 'required|string|min:5|max:1000',
 
         ];
