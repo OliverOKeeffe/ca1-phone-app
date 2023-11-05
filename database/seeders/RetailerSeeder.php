@@ -15,17 +15,12 @@ class RetailerSeeder extends Seeder
     {
         $reatailers = [
             [
-              'name' => 'Apple',
-              'founded' => '1976',
-              'location' => 'LA, USA',
-            ],
-            [
-                'name' => 'Samsung',
-                'founded' => '1969',
-                'location' => 'Suwon-Si, South Korea',
+              'name' => 'Currys',
+              'founded' => '1884',
+              'num_location' => '16',
             ],
      
           ];
-          Retailer::insert($Retailers);
+          Retailer::insert($retailers);
     }
 }
