@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Brandcontroller;
+use App\Http\Controllers\Retailercontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::resource('brands', BrandController::class);
+Route::resource('retailers', RetailerController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

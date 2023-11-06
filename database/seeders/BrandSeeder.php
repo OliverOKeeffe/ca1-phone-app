@@ -13,7 +13,7 @@ class BrandSeeder extends Seeder
      */
     public function run(): void
     {
-        // Brand::factory()->count(20)->create(); 
+        // Data that is beign seeded into the database
         $brands = [
             [
               'name' => 'Apple',
@@ -25,6 +25,11 @@ class BrandSeeder extends Seeder
                 'founded' => '1969',
                 'location' => 'Suwon-Si, South Korea',
             ],
+            [
+              'name' => 'OnePlus',
+              'founded' => '2013',
+              'location' => 'Shenzhen, China',
+          ],
      
           ];
           Brand::insert($brands);

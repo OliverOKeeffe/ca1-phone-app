@@ -33,7 +33,7 @@ class RetailerController extends Controller
     public function store(Request $request)
     {
         $rules =[
-            'name'=> 'required|string|unique:retailerss,name|min:2|max:150',
+            'name'=> 'required|string|unique:retailers,name|min:2|max:150',
             'founded'=> 'required|string|min:4|max:4',
             'num_location'=> 'required|string|min:1|max:100',
 
