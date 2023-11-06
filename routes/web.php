@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Brandcontroller;
 use App\Http\Controllers\Retailercontroller;
+use App\Http\Controllers\Phoneontroller;
 
 /*
 |--------------------------------------------------------------------------
