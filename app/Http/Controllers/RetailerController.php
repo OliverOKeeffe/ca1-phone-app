@@ -99,6 +99,7 @@ class RetailerController extends Controller
         $retailer = Retailer::findOrFail($id);
         $retailer->name = $request->name;
         $retailer->founded = $request->founded;
+        $retailer->founded = $request->founded;
         $retailer->num_locations = $request->num_locations;
         $retailer->save();
 
@@ -112,7 +113,7 @@ class RetailerController extends Controller
      */
     public function destroy(string $id)
     {
-        $reatiler = Retailer::findOrFail($id);
+        $retailer = Retailer::findOrFail($id);
         $retailer->delete();
 
         return redirect()->route('retailers.index')->with('status', 'Retailer deleted successfully');

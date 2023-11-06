@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('founded');
-            $table->string('num_location');
+            $table->string('num_locations');
             $table->timestamps();
         });
     }
