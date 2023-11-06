@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::resource('brands', BrandController::class);
 Route::resource('retailers', RetailerController::class);
+Route::resource('retailers', PhoneController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
