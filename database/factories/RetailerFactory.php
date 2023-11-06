@@ -19,7 +19,7 @@ class RetailerFactory extends Factory
         return [
             'name' => $this->faker->unique()->string(4), 
             'founded' => $this->faker->text(50),
-            'num_location' => $this->faker->text(50)
+            'num_locations' => $this->faker->text(50)
         ];
     }
 }

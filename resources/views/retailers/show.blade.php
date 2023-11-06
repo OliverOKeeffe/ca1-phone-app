@@ -5,7 +5,7 @@
 
 <p>{{ $retailer->name }}</p>
 <p>{{ $retailer->founded }}</p>
-<p>{{ $retailer->num_location }}</p>
+<p>{{ $retailer->num_locations }}</p>
 
 <div>
     <a href="{{ route('retailers.edit', $retailer->id) }}">Edit</a>

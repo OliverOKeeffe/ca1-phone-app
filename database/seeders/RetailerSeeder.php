@@ -17,7 +17,7 @@ class RetailerSeeder extends Seeder
             [
               'name' => 'Currys',
               'founded' => '1884',
-              'num_location' => '16',
+              'num_locations' => '16',
             ],
      
           ];

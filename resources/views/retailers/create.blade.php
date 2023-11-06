@@ -31,9 +31,9 @@
     </div>
     <div>
         <label for="">num_location</label>
-        <input type="text" name="num_location" id="num_location" value="{{  old('num_location') }}"/>
-        @if($errors->has('num_location'))
-        <span>{{ $errors->first('num_location') }}</span>
+        <input type="text" name="num_locations" id="num_locations" value="{{  old('num_locations') }}"/>
+        @if($errors->has('num_locations'))
+        <span>{{ $errors->first('num_locations') }}</span>
         @endif
     </div>
     <button type="submit">Create</button>

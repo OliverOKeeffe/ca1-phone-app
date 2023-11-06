@@ -23,7 +23,7 @@
                     Founded
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Created
+                    Number of locations
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Action
@@ -40,7 +40,7 @@
                 {{ $retailer->founded }}
             </td>
             <td class="px-6 py-4">
-                {{ $retailer->num_location }}
+                {{ $retailer->num_locations }}
             </td>
             <td class="px-6 py-4">
                 <a href="{{ route('retailers.show', $retailer->id) }}">Read more</a>

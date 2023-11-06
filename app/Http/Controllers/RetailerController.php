@@ -35,7 +35,7 @@ class RetailerController extends Controller
         $rules =[
             'name'=> 'required|string|unique:retailers,name|min:2|max:150',
             'founded'=> 'required|string|min:4|max:4',
-            'num_location'=> 'required|string|min:1|max:100',
+            'num_locations'=> 'required|string|min:1|max:100',
 
         ];
 
@@ -49,7 +49,7 @@ class RetailerController extends Controller
         $retailer = new Retailer;
         $retailer->name = $request->name;
         $retailer->founded = $request->founded;
-        $retailer->num_location = $request->num_location;
+        $retailer->num_locations = $request->num_locations;
         $retailer->save();
 
         return redirect()->route('retailers.index')->with('status', 'Created a new Retailer');
@@ -72,7 +72,7 @@ class RetailerController extends Controller
     public function edit(string $id)
     {
         $retailer = Retailer::findOrFail($id);
-        return view('retailer.edit', [
+        return view('retailers.edit', [
             'retailer' => $retailer
         ]);
     }
@@ -85,7 +85,7 @@ class RetailerController extends Controller
         $rules =[
             'name'=> "required|string|unique:retailers,name,{$id}|min:3|max:50",
             'founded'=> 'required|string|min:4|max:4',
-            'num_location'=> 'required|string|min:5|max:1000',
+            'num_locations'=> 'required|string|min:1|max:1000',
 
         ];
 
@@ -96,10 +96,10 @@ class RetailerController extends Controller
         $request->validate($rules, $messages);
 
 
-        $retailer = Brand::findOrFail($id);
+        $retailer = Retailer::findOrFail($id);
         $retailer->name = $request->name;
         $retailer->founded = $request->founded;
-        $retailer->num_location = $request->num_location;
+        $retailer->num_locations = $request->num_locations;
         $retailer->save();
 
         return redirect()       
