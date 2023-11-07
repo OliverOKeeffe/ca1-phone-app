@@ -26,6 +26,15 @@
                     Battery life
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    Height
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Weight
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Brand id
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Action
                 </th>
             </tr>

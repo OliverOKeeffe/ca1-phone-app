@@ -13,6 +13,7 @@ return new class extends Migration
     // i then added in the collumns for the table 
     public function up(): void
     {
+        // adding the collumn naes and their specific datatype
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
