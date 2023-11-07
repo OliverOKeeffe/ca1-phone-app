@@ -13,7 +13,7 @@ class RetailerSeeder extends Seeder
      */
     public function run(): void
     {
-        $reatailers = [
+        $retailers = [
             [
               'name' => 'Currys',
               'founded' => '1884',

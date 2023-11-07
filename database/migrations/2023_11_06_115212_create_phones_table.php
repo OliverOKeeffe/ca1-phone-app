@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('battery_life');
             $table->string('height');
             $table->string('weight');
-            $table->string('brand_id');
+            $table->enum('brand_id', ['1', '2']);
             $table->timestamps();
         });
     }

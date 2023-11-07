@@ -8,6 +8,10 @@ use App\Models\Phone;
 
 class PhoneSeeder extends Seeder
 {
+     /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
         // Data that is beign seeded into the database
         $phones = [

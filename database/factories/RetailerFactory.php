@@ -14,6 +14,7 @@ class RetailerFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    // fake text to be returend for the database
     public function definition(): array
     {
         return [

@@ -34,18 +34,18 @@ class BrandController extends Controller
     {
         //dd($request->title)
 
-        //validation rules
+        // set the validation rules for the data
         $rules =[
             'name'=> 'required|string|unique:brands,name|min:2|max:150',
             'founded'=> 'required|string|min:4|max:4',
             'location'=> 'required|string|min:5|max:30',
 
         ];
-
+        // display the message if the brand is not a unique name
         $messages=[
             'brand.unique'=>'Brand name should be unique'
         ];
-
+        // this requests the rules from above for the validation process
         $request->validate($rules, $messages);
 
 
@@ -77,6 +77,7 @@ class BrandController extends Controller
     public function edit(string $id)
     {
         $brand = Brand::findOrFail($id);
+        // returns the brands edit page so it knows the rules for the edit
         return view('brands.edit', [
             'brand' => $brand
         ]);
