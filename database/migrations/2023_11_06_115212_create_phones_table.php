@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
             $table->string('model_name')->unique();
-            $table->id('year');
-            $table->id('battery_life');
-            $table->id('height');
-            $table->id('weight');
-            $table->id('brand_id');
+            $table->string('year');
+            $table->string('battery_life');
+            $table->string('height');
+            $table->string('weight');
+            $table->string('brand_id');
             $table->timestamps();
         });
     }

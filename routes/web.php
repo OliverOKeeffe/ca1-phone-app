@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Brandcontroller;
 use App\Http\Controllers\Retailercontroller;
-use App\Http\Controllers\Phoneontroller;
+use App\Http\Controllers\Phonecontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::resource('brands', BrandController::class);
 Route::resource('retailers', RetailerController::class);
-Route::resource('retailers', PhoneController::class);
+Route::resource('phones', PhoneController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

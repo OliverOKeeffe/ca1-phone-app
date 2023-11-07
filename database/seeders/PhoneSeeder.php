@@ -4,12 +4,13 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Phone;
 
 class PhoneSeeder extends Seeder
 {
     {
         // Data that is beign seeded into the database
-        $brands = [
+        $phones = [
             [
               'model_name' => 'IPhone 11',
               'year' => '2019',
