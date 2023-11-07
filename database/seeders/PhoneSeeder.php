@@ -23,6 +23,14 @@ class PhoneSeeder extends Seeder
               'weight' => '194g',
               'brand_id' => '1',
             ],
+            [
+              'model_name' => 'Samsung',
+              'year' => '2019',
+              'battery_life' => '14hrs',
+              'height' => '5.94"',
+              'weight' => '194g',
+              'brand_id' => '1',
+            ],
      
           ];
           Phone::insert($phones);
