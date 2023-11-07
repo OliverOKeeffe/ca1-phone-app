@@ -1,7 +1,7 @@
 @extends('layouts.myApp')
 
 @section('content')
-<h1>Show Phone</h1>
+<h1><strong>Show Phone</strong></h1>
 
 <p>{{ $phone->model_name }}</p>
 <p>{{ $phone->year }}</p>

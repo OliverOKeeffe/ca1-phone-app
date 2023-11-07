@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-
+                <!-- added the links to the three tables that i created to the nav bar -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('brands.index')" :active="request()->routeIs('brands')">
                         {{ __('Brands') }}

@@ -1,8 +1,8 @@
 @extends('layouts.myApp')
 
 @section('content')
-<h1>Show brand</h1>
-
+<h1><strong>Show brand</strong></h1>
+<!-- displays the data of a specific brand from the database -->
 <p>{{ $brand->name }}</p>
 <p>{{ $brand->founded }}</p>
 <p>{{ $brand->location }}</p>

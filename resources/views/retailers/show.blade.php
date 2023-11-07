@@ -1,7 +1,7 @@
 @extends('layouts.myApp')
 
 @section('content')
-<h1>Show retailer</h1>
+<h1><strong>Show retailer</strong></h1>
 
 <p>{{ $retailer->name }}</p>
 <p>{{ $retailer->founded }}</p>
