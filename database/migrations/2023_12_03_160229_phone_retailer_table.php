@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignID('retailer_id');
 
             $table->foreign('phone_id')->references('id')->on('phones')->onUpdate('cascade')->onDelete('restrict');
-            $table->foreign('author_id')->references('id')->on('authors')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('retailer_id')->references('id')->on('retailers')->onUpdate('cascade')->onDelete('restrict');
 
             $table->timestamps();
         });
