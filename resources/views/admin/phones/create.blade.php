@@ -13,7 +13,7 @@
     </div>
 @endif --}}
 <!-- Creating the text boxes to add data to to create phones -->
-<form action="{{ route('phones.store') }}" method="post">
+<form action="{{ route('admin.phones.store') }}" method="post">    
     @csrf
     <div>
         <label for="">Model Name</label>
@@ -59,14 +59,14 @@
         @endforeach
 
     </div>
-    <!-- <div class="form-group">
-         <label for="brand">Brand</label>
-           <select name="brand_id">
-         @foreach($brands as $brand)
-            <option {{ old('brand_id') == $band->id ? "selected" : "" }} value="{{$brand>id}}">{{$band->name}}</option>
+    <div class="form-group">
+         <label for="brand">Retailer</label>
+           <select name="retailer_id">
+         @foreach($retaielrs as $retailer)
+            <option {{ old('retailer_id') == $reatailer->id ? "selected" : "" }} value="{{$retailer>id}}">{{$retailer->name}}</option>
         @endforeach
          </select>
-   </div> -->
+   </div>
 
     <button type="submit" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Create</button>
     <button type="submit" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"><a href="{{ route('phones.index') }}">Back</a></button>

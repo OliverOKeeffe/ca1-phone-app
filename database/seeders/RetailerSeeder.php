@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Retailer;
+use App\Models\Phone;
 
 class RetailerSeeder extends Seeder
 {
@@ -13,14 +14,13 @@ class RetailerSeeder extends Seeder
      */
     public function run(): void
     {
-        $retailers = [
-            [
-              'name' => 'Currys',
-              'founded' => '1884',
-              'num_locations' => '16',
-            ],
-     
-          ];
-          Retailer::insert($retailers);
+        $numOfRetailers = 5;
+        Retailer::factory()->times(3)->create();
+
+        foreach(Phone::all() as $phone) {
+            $retailers = Retailer::inRandomOrder()->take(rand(1,$numOfretailers))->pluck('id');
+            $phone->retailers()->attach($retailers);
+        }
+
     }
 }
