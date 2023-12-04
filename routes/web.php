@@ -23,9 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::resource('brands', BrandController::class);
-// Route::resource('retailers', RetailerController::class);
-// Route::resource('phones', PhoneController::class);
+Route::resource('brands', BrandController::class);
+Route::resource('retailers', RetailerController::class);
+Route::resource('phones', PhoneController::class);
 Route::resource('phones', HomeController::class);
 
 Route::get('/dashboard', function () {
