@@ -18,7 +18,7 @@ class RetailerSeeder extends Seeder
         Retailer::factory()->times(3)->create();
 
         foreach(Phone::all() as $phone) {
-            $retailers = Retailer::inRandomOrder()->take(rand(1,$numOfretailers))->pluck('id');
+            $retailers = Retailer::inRandomOrder()->take(rand(1,$numOfRetailers))->pluck('id');
             $phone->retailers()->attach($retailers);
         }
 

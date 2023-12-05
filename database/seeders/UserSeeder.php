@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
 
         $admin = new User;
         $admin->name = "Oliver O'Keeffe";
-        $admin->email = "admin@ca1example.com";
+        $admin->email = "admin@caexample.com";
         $admin->password = "secret123";
         $admin->save();
 
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
 
         $user = new User;
         $user->name = "John Jones";
-        $user->email = "user@ca1example.com";
+        $user->email = "user@caexample.com";
         $user->password = "secret123";
         $user->save();
 

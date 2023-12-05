@@ -14,7 +14,7 @@ class PhoneController extends Controller
     public function index()
     {
         $phones = Phone::paginate(10);
-        return view('admin.phones.index')->with('phone', $phone);
+        return view('admin.phones.index')->with('phones', $phones);
     }
 
     /**
@@ -26,7 +26,7 @@ class PhoneController extends Controller
         $brands = Brand::all();
 
         return view('admin.phones.create')->with('Retailers', $retailers)
-                                   ->with('Brands', $brands);
+                                          ->with('Brands', $brands);
     }
 
     /**

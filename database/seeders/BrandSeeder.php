@@ -13,6 +13,8 @@ class BrandSeeder extends Seeder
      */
     public function run(): void
     {
+        // Brand::factory()->times(5)->hasPhones(20)->create();
+
         // Data that is being seeded into the database
         $brands = [
             [
