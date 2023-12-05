@@ -22,7 +22,11 @@ class PhoneController extends Controller
      */
     public function create()
     {
-        return view('phones.create');
+        $retailers = Retailer::all();
+        $brands = Brand::all();
+
+        return view('admin.phones.create')->with('Retailers', $retailers)
+                                   ->with('Brands', $brands);
     }
 
     /**
@@ -69,7 +73,9 @@ class PhoneController extends Controller
     {
         $phone = Phone::findOrFail($id);
 
-        return view('user.phones.show')->with('phone', $phone);
+        return view('admin.phones.show', [
+            'phone' =>$phone
+        ]);
     }
 
     /**
