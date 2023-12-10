@@ -13,7 +13,7 @@ class PhoneController extends Controller
      */
     public function index()
     {
-        $Phones = Phone::paginate(10);
+        $phones = Phone::paginate(10);
         return view('user.phones.index')->with('phones', $phones);
     }
 
