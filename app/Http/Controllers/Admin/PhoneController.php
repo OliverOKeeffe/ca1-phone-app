@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Phone;
+use App\Models\Retailer;
+use App\Models\Brand;
+use Auth;
 
 class PhoneController extends Controller
 {
@@ -25,8 +28,8 @@ class PhoneController extends Controller
         $retailers = Retailer::all();
         $brands = Brand::all();
 
-        return view('admin.phones.create')->with('Retailers', $retailers)
-                                          ->with('Brands', $brands);
+        return view('admin.phones.create')->with('retailers', $retailers)
+                                          ->with('brands', $brands);
     }
 
     /**

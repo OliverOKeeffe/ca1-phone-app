@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class BrandFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    // fake text to be returend for the database
+    // /**
+    //  * Define the model's default state.
+    //  *
+    //  * @return array<string, mixed>
+    //  */
+    // // fake text to be returend for the database
     public function definition(): array
     {
         return [
