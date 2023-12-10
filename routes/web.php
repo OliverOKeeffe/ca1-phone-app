@@ -46,6 +46,6 @@ Route::resource('/phones', UserPhoneController::class)
         ->only(['index', 'show']);
 Route::resource('/admin/phones', AdminPhoneController::class)->middleware(['auth', 'role:admin'])->names('admin.phones');
 Route::resource('/admin/brands', AdminBrandController::class)->middleware(['auth', 'role:admin'])->names('admin.brands');
-Route::resource('/admin/retailers', AdminBrandController::class)->middleware(['auth', 'role:admin'])->names('admin.retailers');
+Route::resource('/admin/retailers', AdminRetailerController::class)->middleware(['auth', 'role:admin'])->names('admin.retailers');
 
 require __DIR__.'/auth.php';

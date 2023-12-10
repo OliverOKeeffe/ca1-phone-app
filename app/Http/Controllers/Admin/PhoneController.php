@@ -37,41 +37,83 @@ class PhoneController extends Controller
      */
     public function store(Request $request)
     {
-         //dd($request->title)
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required|max:500',
+            'isbn' => 'required',
+          //  'retailer' =>'required',
+            //'phone_image' => 'file|image|dimensions:width=300,height=400'
+            // 'phone_image' => 'file|image',
+            'brand_id' => 'required',
+            'retailers' =>['required' , 'exists:retailers,id']
+        ]);
 
-        //validation rules
-        $rules =[
-            'model_name'=> 'required|string|unique:phones,model_name|min:2|max:150',
-            'year'=> 'required|string|min:4|max:4',
-            'battery_life'=> 'required|string|min:5|max:30',
-            'height'=> 'required|string|min:5|max:30',
-            'weight'=> 'required|string|min:2|max:30',
-            'brand_id'=> 'required|string|min:1|max:30',
-
-        ];
-
-        $messages=[
-            'phone.unique'=>'Phone model_name should be unique'
-        ];
-
-        $request->validate($rules, $messages);
+        // $phone_image = $request->file('phone_image');
+        // $extension = $phone_image->getClientOriginalExtension();
+        // // $filename = date('Y-m-d-His') . '_' . $request->title . '.' . $extension;
+        // // dd($filename);
+        // $filename = date('Y-m-d-His') . '.' . $extension;
 
 
-        $phone = new Phone;
-        $phone->model_name = $request->model_name;
-        $phone->year = $request->year;
-        $phone->battery_life = $request->battery_life;
-        $phone->height = $request->height;
-        $phone->weight = $request->weight;
-        $phone->brand_id = $request->brand_id;
-        $phone->save();
+        // $phone_image->storeAs('public/images' , $filename);
 
-        return redirect()->route('phones.index')->with('status', 'Created a new Phone');
+        $phone = Phone::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'isbn' => $request->isbn,
+            'phone_image' => $filename,
+        //    'retailer' => $request->retailer,
+            'brand_id' => $request->brand_id
+        ]);
+
+        // $phone = new Phone();
+        // $phone->title = $request->title
+
+        $phone->retailers()->attach($request->retailers);
+
+        return to_route('admin.phones.index');
     }
 
     /**
      * Display the specified resource.
      */
+        
+        
+        //dd($request->title)
+
+        //validation rules
+    //     $rules =[
+    //         'model_name'=> 'required|string|unique:phones,model_name|min:2|max:150',
+    //         'year'=> 'required|string|min:4|max:4',
+    //         'battery_life'=> 'required|string|min:5|max:30',
+    //         'height'=> 'required|string|min:5|max:30',
+    //         'weight'=> 'required|string|min:2|max:30',
+    //         'brand_id'=> 'required|string|min:1|max:30',
+
+    //     ];
+
+    //     $messages=[
+    //         'phone.unique'=>'Phone model_name should be unique'
+    //     ];
+
+    //     $request->validate($rules, $messages);
+
+
+    //     $phone = new Phone;
+    //     $phone->model_name = $request->model_name;
+    //     $phone->year = $request->year;
+    //     $phone->battery_life = $request->battery_life;
+    //     $phone->height = $request->height;
+    //     $phone->weight = $request->weight;
+    //     $phone->brand_id = $request->brand_id;
+    //     $phone->save();
+
+    //     return redirect()->route('phones.index')->with('status', 'Created a new Phone');
+    // }
+
+    // /**
+    //  * Display the specified resource.
+    //  */
     public function show(string $id)
     {
         $phone = Phone::findOrFail($id);
@@ -133,9 +175,9 @@ class PhoneController extends Controller
      */
     public function destroy(string $id)
     {
-        $phone = Phone::findOrFail($id);
-        $phone->delete();
+        // $phone = Phone::findOrFail($id);
+        // $phone->delete();
 
-        return redirect()->route('phones.index')->with('status', 'Phone deleted successfully');
+        // return redirect()->route('phones.index')->with('status', 'Phone deleted successfully');
     }
 }
