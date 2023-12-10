@@ -38,9 +38,11 @@ class PhoneController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required|max:500',
-            'isbn' => 'required',
+            'model_name' => 'required|string|unique:phones,model_name|min:2|max:150',
+            'year' => 'required|string|min:4|max:4',
+            'battery_life' => 'required|string|min:5|max:30',
+            'height' => 'required|string|min:5|max:30',
+            'weight' => 'required|string|min:2|max:30',
           //  'retailer' =>'required',
             //'phone_image' => 'file|image|dimensions:width=300,height=400'
             // 'phone_image' => 'file|image',
@@ -58,10 +60,12 @@ class PhoneController extends Controller
         // $phone_image->storeAs('public/images' , $filename);
 
         $phone = Phone::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'isbn' => $request->isbn,
-            'phone_image' => $filename,
+            'model_name' => $request->model_name,
+            'year' => $request->year,
+            'battery_life' => $request->battery_life,
+            'height' => $request->height,
+            'weight' => $request->weight,
+            // 'phone_image' => $filename,
         //    'retailer' => $request->retailer,
             'brand_id' => $request->brand_id
         ]);
@@ -175,9 +179,9 @@ class PhoneController extends Controller
      */
     public function destroy(string $id)
     {
-        // $phone = Phone::findOrFail($id);
-        // $phone->delete();
+        $phone = Phone::findOrFail($id);
+        $phone->delete();
 
-        // return redirect()->route('phones.index')->with('status', 'Phone deleted successfully');
+        return redirect()->route('phones.index')->with('status', 'Phone deleted successfully');
     }
 }
