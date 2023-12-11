@@ -133,9 +133,11 @@ class PhoneController extends Controller
     public function edit(string $id)
     {
         $phone = Phone::findOrFail($id);
-        return view('phones.edit', [
-            'phone' => $phone
-        ]);
+        $retailers = Retailer::all();
+        $brands = Brand::all();
+        return view('admin.phones.edit', ['phone' => $phone])->with('retailers', $retailers)
+                                                             ->with('brands', $brands);
+        
     }
 
     /**
@@ -170,7 +172,7 @@ class PhoneController extends Controller
         $phone->save();
 
         return redirect()       
-            ->route('phones.index')
+            ->route('admin.phones.index')
             ->with('status', ' Updated a Phone');
     }
 
@@ -180,8 +182,10 @@ class PhoneController extends Controller
     public function destroy(string $id)
     {
         $phone = Phone::findOrFail($id);
+        $phone->retailers()->detach();
+
         $phone->delete();
 
-        return redirect()->route('phones.index')->with('status', 'Phone deleted successfully');
+        return redirect()->route('admin.phones.index')->with('status', 'Phone deleted successfully');
     }
 }

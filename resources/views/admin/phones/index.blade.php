@@ -35,6 +35,9 @@
                     Brand id
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    Retailer
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Action
                 </th>
             </tr>
@@ -59,6 +62,9 @@
             </td>
             <td class="px-6 py-4">
                 {{ $phone->brand_id }}
+            </td>
+            <td class="px-6 py-4">
+                {{ $phone->retailer_id }}
             </td>
             <td class="px-6 py-4">
             <a href="{{ route('admin.phones.show', $phone->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
