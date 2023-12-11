@@ -18,12 +18,13 @@ class PhoneFactory extends Factory
     public function definition(): array
     {
         return [
-            'model_name' => $this->faker->unique()->string(4), 
+            'model_name' => $this->faker->unique()->text(5), 
             'year' => $this->faker->text(50),
             'battery_life' => $this->faker->text(50),
             'height' => $this->faker->text(50),
             'weight' => $this->faker->text(50),
-            'brand_id' => $this->faker->text(50)
+            'retailer_id' => $this->faker->text(50),
+            'brand_id' => $this->faker->text(50),
         ];
     }
 }

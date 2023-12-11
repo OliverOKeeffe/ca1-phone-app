@@ -8,6 +8,7 @@
 <p>{{ $phone->battery_life }}</p>
 <p>{{ $phone->height }}</p>
 <p>{{ $phone->weight }}</p>
+<p>{{ $phone->retailer_id }}</p>
 <p>{{ $phone->brand_id }}</p>
 
 <div>
