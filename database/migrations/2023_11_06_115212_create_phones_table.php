@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('height');
             $table->string('weight');
             
-            $table->foreignId('brand_id');
-
+            $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands');
+
+            $table->foreign('retailer_id');
+            $table->foreign('retailer_id')->references('id')->on('retailers');
 
             $table->timestamps();
         });
