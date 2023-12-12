@@ -35,7 +35,7 @@ class PhoneSeeder extends Seeder
         //       'brand_id' => '1',
         //     ],
      
-          // ];
+        //   ];
           // $numOfPhones = 5;
           // Phone::factory()->times(3)->create();
   

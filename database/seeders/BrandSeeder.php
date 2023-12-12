@@ -13,11 +13,10 @@ class BrandSeeder extends Seeder
      */
     public function run(): void
     {
-        Brand::factory()->times(5)->hasPhones(20)->create();
-        
         // Brand::factory()->times(5)->hasPhones(20)->create();
+        
+        Brand::factory()->times(5)->create();
 
-        // Data that is being seeded into the database
         // $brands = [
         //     [
         //       'name' => 'Apple',
@@ -67,14 +66,5 @@ class BrandSeeder extends Seeder
             
      
         //   ];
-
-        // $numOfBrands = 5;
-        // Brand::factory()->times(3)->create();
-
-        // foreach(Phone::all() as $phone) {
-        //     $brands = Brands::inRandomOrder()->take(rand(1,$numOfBrands))->pluck('id');
-        //     $phone->brands()->attach($brands);
-        // }
-        //   Brand::insert($brands);
     }
 }

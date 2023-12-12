@@ -15,7 +15,7 @@ class RetailerSeeder extends Seeder
     public function run(): void
     {
         $numOfRetailers = 5;
-        Retailer::factory()->times(3)->create();
+        Retailer::factory()->times($numOfRetailers)->create();
 
         foreach(Phone::all() as $phone) {
             $retailers = Retailer::inRandomOrder()->take(rand(1,$numOfRetailers))->pluck('id');

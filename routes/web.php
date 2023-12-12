@@ -49,7 +49,7 @@ Route::resource('/admin/brands', AdminBrandController::class)->middleware(['auth
 Route::resource('/admin/retailers', AdminRetailerController::class)->middleware(['auth', 'role:admin'])->names('admin.retailers');
 
 Route::resource('/user/phones', UserPhoneController::class)->middleware(['auth', 'role:user'])->names('user.phones');
-Route::resource('/user/brands', UerBrandController::class)->middleware(['auth', 'role:user'])->names('user.brands');
+Route::resource('/user/brands', UserBrandController::class)->middleware(['auth', 'role:user'])->names('user.brands');
 Route::resource('/user/retailers', UserRetailerController::class)->middleware(['auth', 'role:user'])->names('user.retailers');
 
 require __DIR__.'/auth.php';
