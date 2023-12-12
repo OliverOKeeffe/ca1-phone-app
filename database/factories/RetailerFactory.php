@@ -14,9 +14,9 @@ class RetailerFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->text(5), 
-            'founded' => $this->faker->text(50),
-            'num_locations' => $this->faker->text(50),
+            'name' => $this->faker->unique()->text(20), 
+            'founded' => $this->faker->year(10),
+            'num_locations' => $this->faker->randomDigit(10),
         ];
     }
 }

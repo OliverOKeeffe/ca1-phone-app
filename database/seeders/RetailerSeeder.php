@@ -14,7 +14,7 @@ class RetailerSeeder extends Seeder
      */
     public function run(): void
     {
-        $numOfRetailers = 5;
+        $numOfRetailers = 20;
         Retailer::factory()->times($numOfRetailers)->create();
 
         foreach(Phone::all() as $phone) {
