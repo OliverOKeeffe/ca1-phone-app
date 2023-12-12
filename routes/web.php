@@ -11,6 +11,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\PhoneController as AdminPhoneController;
 use App\Http\Controllers\User\PhoneController as UserPhoneController;
 
+use App\Http\Controllers\Admin\BrandController as AdminBrandController;
+use App\Http\Controllers\User\BrandController as UserBrandController;
+
+use App\Http\Controllers\Admin\RetailerController as AdminRetailerController;
+use App\Http\Controllers\User\RetailerController as UserRetailerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

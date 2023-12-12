@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Brands') }}
+            {{ __('Retailers') }}
         </h2>
     </x-slot>
 
@@ -12,9 +12,10 @@
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         
                         
-                        <p><b>Name:</b> {{ $brand->name }}</p>
-                        <p><b>Year:</b> {{ $brand->founded }}</p>
-                        <p><b>Battery life:</b> {{ $brand->location }}</p>                      
+                        <p><b>Name:</b> {{ $retailer->model_name }}</p>
+                        <p><b>Year:</b> {{ $retailer->year }}</p>
+                        <p><b>Battery life:</b> {{ $retailer->num_locations }}</p>                      
+                     
                         
                     </div>
                 </div>

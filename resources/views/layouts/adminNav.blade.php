@@ -18,21 +18,13 @@
                     <x-nav-link :href="route('admin.phones.index')" :active="request()->routeIs('admin.phones')">
                         {{ __('Phones') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.phones.create')" :active="request()->routeIs('admin.phones')">
-                        {{ __('Create Phone') }}
-                    </x-nav-link>
-                    <!-- <x-nav-link :href="route('admin.brands.index')" :active="request()->routeIs('admin.brands')">
-                        {{ __('Phones') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.brands.create')" :active="request()->routeIs('admin.brands')">
-                        {{ __('Create Phone') }}
+                     <x-nav-link :href="route('admin.brands.index')" :active="request()->routeIs('admin.brands')">
+                        {{ __('Brands') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.retailers.index')" :active="request()->routeIs('admin.retailers')">
-                        {{ __('Phones') }}
+                        {{ __('Retailers') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.retailers.create')" :active="request()->routeIs('admin.retailers')">
-                        {{ __('Create Phone') }}
-                    </x-nav-link> -->
+                    
                 </div>
             </div>
 

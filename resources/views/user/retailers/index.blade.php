@@ -1,7 +1,7 @@
 <x-app-layout>
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Brands') }}
+            {{ __('Retailers') }}
         </h2>
     </x-slot>
 
@@ -20,7 +20,7 @@
                     Founded
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Location 
+                    Number of Locations
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Action
@@ -29,28 +29,28 @@
         </thead>
         <tbody>
 
-            @forelse($brands as $brand)
+            @forelse($retailers as $retailer)
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {{ $brand->name}}
+                    {{ $retailer->name}}
                 </th>
                 <td class="px-6 py-4">
-                    {{ $brand->founded }}
+                    {{ $retailer->founded }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $brand->location }}
+                    {{ $retailer->num_locations }}
                 </td>
-    
+             
                 <td class="px-6 py-4">
-                    <a href="{{ route('user.brands.show', $brand->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    <a href="{{ route('user.retailers.show', $retailer->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                 </td>
             </tr>
             @empty
-                <h4>No Brands found!</h4>
+                <h4>No retailers found!</h4>
             @endforelse
         </tbody>
     </table>
-    {{ $brands->links() }}
+    {{ $retailers->links() }}
 </div>
                 </div>
             </div>

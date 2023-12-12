@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Retailer;
 
@@ -14,7 +15,7 @@ class RetailerController extends Controller
     {
         $retailers = Retailer::orderBy('created_at', 'desc')->paginate(8);
 
-        return view('retailers.index', [
+        return view('admin.retailers.index', [
             'retailers' => $retailers 
         ]);
     }
@@ -24,7 +25,7 @@ class RetailerController extends Controller
      */
     public function create()
     {
-        return view('retailers.create');
+        return view('admin.retailers.create');
     }
 
     /**
@@ -52,7 +53,7 @@ class RetailerController extends Controller
         $retailer->num_locations = $request->num_locations;
         $retailer->save();
 
-        return redirect()->route('retailers.index')->with('status', 'Created a new Retailer');
+        return redirect()->route('admin.retailers.index')->with('status', 'Created a new Retailer');
     }
 
     /**
@@ -61,7 +62,7 @@ class RetailerController extends Controller
     public function show(string $id)
     {
         $retailer = Retailer::findOrFail($id);
-        return view('retailers.show', [
+        return view('admin.retailers.show', [
             'retailer' => $retailer
         ]);
     }
@@ -72,7 +73,7 @@ class RetailerController extends Controller
     public function edit(string $id)
     {
         $retailer = Retailer::findOrFail($id);
-        return view('retailers.edit', [
+        return view('admin.retailers.edit', [
             'retailer' => $retailer
         ]);
     }
@@ -104,7 +105,7 @@ class RetailerController extends Controller
         $retailer->save();
 
         return redirect()       
-            ->route('retailers.index')
+            ->route('admin.retailers.index')
             ->with('status', ' Updated a Retailer');
     }
 
@@ -116,6 +117,6 @@ class RetailerController extends Controller
         $retailer = Retailer::findOrFail($id);
         $retailer->delete();
 
-        return redirect()->route('retailers.index')->with('status', 'Retailer deleted successfully');
+        return redirect()->route('admin.retailers.index')->with('status', 'Retailer deleted successfully');
     }
 }

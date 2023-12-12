@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 
@@ -12,11 +13,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::orderBy('created_at', 'desc')->paginate(8);
-
-        return view('brands.index', [
-            'brands' => $brands 
-        ]);
+        $brands = Brand::paginate(10);
+        return view('admin.brands.index')->with('brands', $brands);
     }
 
     /**
@@ -24,7 +22,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('brands.create');
+        return view('admin.brands.create');
     }
 
     /**
@@ -55,7 +53,7 @@ class BrandController extends Controller
         $brand->location = $request->location;
         $brand->save();
 
-        return redirect()->route('brands.index')->with('status', 'Created a new Brand');
+        return redirect()->route('admin.brands.index')->with('status', 'Created a new Brand');
     }
 
 
@@ -65,7 +63,7 @@ class BrandController extends Controller
     public function show(string $id)
     {
         $brand = Brand::findOrFail($id);
-        return view('brands.show', [
+        return view('admin.brands.show', [
             'brand' => $brand
         ]);
 
@@ -78,7 +76,7 @@ class BrandController extends Controller
     {
         $brand = Brand::findOrFail($id);
         // returns the brands edit page so it knows the rules for the edit
-        return view('brands.edit', [
+        return view('admin.brands.edit', [
             'brand' => $brand
         ]);
     }
@@ -109,7 +107,7 @@ class BrandController extends Controller
         $brand->save();
 
         return redirect()       
-            ->route('brands.index')
+            ->route('admin.brands.index')
             ->with('status', ' Updated a Brand');
     
 }
@@ -122,7 +120,7 @@ class BrandController extends Controller
         $brand = Brand::findOrFail($id);
         $brand->delete();
 
-        return redirect()->route('brands.index')->with('status', 'Brand deleted successfully');
+        return redirect()->route('admin.brands.index')->with('status', 'Brand deleted successfully');
     }
 
 }
