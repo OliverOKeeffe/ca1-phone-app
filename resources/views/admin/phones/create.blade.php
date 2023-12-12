@@ -14,6 +14,7 @@
 @endif --}}
 <!-- Creating the text boxes to add data to to create phones -->
 <form action="{{ route('admin.phones.store') }}" method="post">    
+<form enctype="multipart/form-data" action="{{ route('admin.phones.store') }}" method="post">
     @csrf
     <div>
         <label for="">Model Name</label>

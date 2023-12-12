@@ -44,20 +44,19 @@ class PhoneController extends Controller
             'height' => 'required|string|min:5|max:30',
             'weight' => 'required|string|min:2|max:30',
           //  'retailer' =>'required',
-            //'phone_image' => 'file|image|dimensions:width=300,height=400'
-            // 'phone_image' => 'file|image',
+            'phone_image' => 'file|image|dimensions:width=300,height=400',
             'brand_id' => 'required',
             'retailers' =>['required' , 'exists:retailers,id']
         ]);
 
-        // $phone_image = $request->file('phone_image');
-        // $extension = $phone_image->getClientOriginalExtension();
-        // // $filename = date('Y-m-d-His') . '_' . $request->title . '.' . $extension;
-        // // dd($filename);
-        // $filename = date('Y-m-d-His') . '.' . $extension;
+        $phone_image = $request->file('phone_image');
+        $extension = $phone_image->getClientOriginalExtension();
+        // $filename = date('Y-m-d-His') . '_' . $request->title . '.' . $extension;
+        // dd($filename);
+        $filename = date('Y-m-d-His') . '.' . $extension;
 
 
-        // $phone_image->storeAs('public/images' , $filename);
+        $phone_image->storeAs('public/images' , $filename);
 
         $phone = Phone::create([
             'model_name' => $request->model_name,
@@ -65,7 +64,7 @@ class PhoneController extends Controller
             'battery_life' => $request->battery_life,
             'height' => $request->height,
             'weight' => $request->weight,
-            // 'phone_image' => $filename,
+            'phone_image' => $filename,
         //    'retailer' => $request->retailer,
             'brand_id' => $request->brand_id
         ]);

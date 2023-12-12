@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         
-                        
+                        <img width="150" src={{ asset("storage/images/" . $phone->phone_image) }} />
                         <p><b>Name:</b> {{ $phone->model_name }}</p>
                         <p><b>Year:</b> {{ $phone->year }}</p>
                         <p><b>Battery life:</b> {{ $phone->battery_life }}</p>                      
