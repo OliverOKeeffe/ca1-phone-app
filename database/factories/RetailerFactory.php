@@ -13,6 +13,8 @@ class RetailerFactory extends Factory
     // fake text to be returend for the database
     public function definition(): array
     {
+                // this creates the fake data for the seeders
+
         return [
             'name' => $this->faker->unique()->text(20), 
             'founded' => $this->faker->year(10),

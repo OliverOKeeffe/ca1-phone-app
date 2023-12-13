@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 
+// made a specific user controller so that if you are logged in as a user you can't create, edit and delete anything in the database
 class BrandController extends Controller
 {
     /**

@@ -17,10 +17,11 @@ class BrandFactory extends Factory
     // // fake text to be returend for the database
     public function definition(): array
     {
+        // this creates the fake data for the seeders
         return [
-            'name' => $this->faker->unique()->text(5), 
-            'founded' => $this->faker->text(50),
-            'location' => $this->faker->text(50),
+            'name' => $this->faker->unique()->word(5), 
+            'founded' => $this->faker->year(50),
+            'location' => $this->faker->country(50),
         ];
     }
 }

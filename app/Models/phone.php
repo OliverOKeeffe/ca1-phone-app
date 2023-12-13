@@ -23,10 +23,12 @@ class Phone extends Model
         'brand_id',
     ];
 
+    // belongsTo was used to the one to many relationship between brands and phones
     public function brand(){
         return $this->belongsTo(Brand::class);
     }
 
+    // belongsToMany was used to the the many to many relationship between phones and retailers
     public function retailers(){
         return $this->belongsToMany(Retailer::class);
     }

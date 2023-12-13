@@ -18,13 +18,14 @@ class PhoneFactory extends Factory
     // fake text to be returend for the database
     public function definition(): array
     {
+        // this creates the fake data for the seeders
 
         return [
-            'model_name' => $this->faker->unique()->text(5), 
-            'year' => $this->faker->text(5),
-            'battery_life' => $this->faker->text(50),
-            'height' => $this->faker->text(50),
-            'weight' => $this->faker->text(50),
+            'model_name' => $this->faker->unique()->company(5), 
+            'year' => $this->faker->year(5),
+            'battery_life' => $this->faker->randomNumber(2, mt_getrandmax()),
+            'height' => $this->faker->randomNumber(2, mt_getrandmax()),
+            'weight' => $this->faker->randomNumber(3, mt_getrandmax()),
             'brand_id' => Brand::inRandomOrder()->take(1)->pluck('id')[0]
         ];
     }

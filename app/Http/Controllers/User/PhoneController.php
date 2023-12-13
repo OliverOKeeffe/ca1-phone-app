@@ -8,6 +8,8 @@ use App\Models\Phone;
 
 class PhoneController extends Controller
 {
+    // made a specific user controller so that if you are logged in as a user you can't create, edit and delete anything in the database
+
     /**
      * Display a listing of the resource.
      */
