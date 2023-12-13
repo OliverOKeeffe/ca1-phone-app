@@ -12,8 +12,8 @@
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         
                         
-                        <p><b>Name:</b> {{ $retailer->model_name }}</p>
-                        <p><b>Year:</b> {{ $retailer->year }}</p>
+                        <p><b>Name:</b> {{ $retailer->name }}</p>
+                        <p><b>Year:</b> {{ $retailer->founded }}</p>
                         <p><b>Battery life:</b> {{ $retailer->num_locations }}</p>                      
                      
                         
