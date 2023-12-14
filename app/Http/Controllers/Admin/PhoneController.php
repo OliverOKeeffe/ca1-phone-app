@@ -74,7 +74,8 @@ class PhoneController extends Controller
 
         $phone->retailers()->attach($request->retailers);
 
-        return to_route('admin.phones.index');
+        return redirect()->route('admin.phones.index');
+
     }
 
     /**
@@ -151,6 +152,8 @@ class PhoneController extends Controller
             'height'=> 'required|string|min:3|max:100',
             'weight'=> 'required|string|min:2|max:100',
             'brand_id'=> 'required|string|min:1|max:100',
+            'phone_image' => 'file|image|dimensions:width=300,height=400',
+
 
         ];
 
@@ -170,9 +173,20 @@ class PhoneController extends Controller
         $phone->brand_id = $request->brand_id;
         $phone->save();
 
+        $phone_image = $request->file('phone_image');
+
+        if ($phone_image) {
+            $extension = $phone_image->getClientOriginalExtension();
+            $filename = date('Y-m-d-His') . '.' . $extension;
+        
+            $phone_image->storeAs('public/images', $filename);
+        }
+        
         return redirect()       
             ->route('admin.phones.index')
             ->with('status', ' Updated a Phone');
+        
+           
     }
 
     /**
