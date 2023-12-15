@@ -16,7 +16,7 @@ class PhoneController extends Controller
      */
     public function index()
     {
-        $phones = Phone::paginate(10);
+        $phones = Phone::paginate(100);
         return view('admin.phones.index')->with('phones', $phones);
     }
 
@@ -44,7 +44,7 @@ class PhoneController extends Controller
             'height' => 'required|string|min:5|max:30',
             'weight' => 'required|string|min:2|max:30',
           //  'retailer' =>'required',
-            'phone_image' => 'file|image|dimensions:width=300,height=400',
+            'phone_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'brand_id' => 'required',
             'retailers' =>['required' , 'exists:retailers,id']
         ]);
@@ -152,7 +152,7 @@ class PhoneController extends Controller
             'height'=> 'required|string|min:3|max:100',
             'weight'=> 'required|string|min:2|max:100',
             'brand_id'=> 'required|string|min:1|max:100',
-            'phone_image' => 'file|image|dimensions:width=300,height=400',
+            'phone_image' => 'file|image|',
 
 
         ];
