@@ -21,7 +21,7 @@ class Phone extends Model
         'height',
         'weight',
         'brand_id',
-        'phone_image', 
+        'phone_image' 
     ];
 
     // belongsTo was used to the one to many relationship between brands and phones
